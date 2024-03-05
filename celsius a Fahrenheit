@@ -1,0 +1,22 @@
+def celsius_a_fahrenheit(celsius):
+    fahrenheit = celsius * 9/5 + 32
+    return fahrenheit
+
+while True:
+    # Solicitar al usuario ingresar la temperatura en grados Celsius
+    temperatura_celsius = input("Ingresa la temperatura en grados Celsius (o 'q' para salir): ")
+    
+    if temperatura_celsius.lower() == 'q':
+        break
+    
+    try:
+        temperatura_celsius = float(temperatura_celsius)
+    except ValueError:
+        print("¡Ingresa un número válido o 'q' para salir!")
+        continue
+
+    # Convertir la temperatura a grados Fahrenheit
+    temperatura_fahrenheit = celsius_a_fahrenheit(temperatura_celsius)
+
+    # Mostrar el resultado
+    print(f"{temperatura_celsius} grados Celsius son {temperatura_fahrenheit} grados Fahrenheit.")
